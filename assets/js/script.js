@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.addEventListener('click', () => {
             const theme = document.documentElement.getAttribute('data-theme');
             const newTheme = theme === 'light' ? 'dark' : 'light';
-            
+
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            
+
             // Re-initialize icons to handle visibility switch
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
@@ -118,6 +118,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.glass-card');
     revealElements.forEach(el => observer.observe(el));
 
+    // Lightbox Close Logic
+    const lightbox = document.getElementById('lightbox');
+    const closeLightbox = document.querySelector('.close-lightbox');
+
+    if (lightbox && closeLightbox) {
+        const close = () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scroll
+        };
+
+        closeLightbox.addEventListener('click', close);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) close();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) close();
+        });
+    }
+
     // GitHub API Integration
     async function fetchGitHubRepos() {
         const repoContainer = document.getElementById('github-repos');
@@ -131,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             repoContainer.innerHTML = '';
 
-            repos.filter(repo => !repo.fork).forEach(repo => {
+            repos.filter(repo => !repo.fork && repo.name !== 'toninobiciusca.github.io').forEach(repo => {
                 const card = document.createElement('div');
                 card.className = 'glass-card repo-card';
 
@@ -142,30 +163,59 @@ document.addEventListener('DOMContentLoaded', () => {
                     'JavaScript': '#f1e05a',
                     'HTML': '#e34c26',
                     'CSS': '#563d7c',
-                    'C': '#555555'
                 };
+
+                // Mapping for repository screenshots
+                const repoImages = {
+                    'ai-spatial-insights': 'assets/images/ai_spatial.png',
+                    'mobility-insights': 'assets/images/mobility_insights_ui_with_ai.png',
+                    'mobility-insights-backend': 'assets/images/mobility_insights_ui.png'
+                };
+
+                const imageUrl = repoImages[repo.name];
+                const imageHtml = imageUrl ? `
+                    <div class="repo-preview">
+                        <img src="${imageUrl}" alt="${repo.name} screenshot">
+                    </div>` : '';
+
                 const langColor = langColors[repo.language] || '#86868b';
 
                 card.innerHTML = `
-                    <div class="repo-header">
-                        <div class="repo-name">${repo.name}</div>
-                        <p class="repo-desc">${repo.description || 'No description available.'}</p>
-                    </div>
-                    <div class="repo-footer">
-                        <div class="repo-lang">
-                            <span class="lang-dot" style="background-color: ${langColor}"></span>
-                            <span>${repo.language || 'Plain Text'}</span>
+                    ${imageHtml}
+                    <div class="repo-card-body">
+                        <div class="repo-header">
+                            <div class="repo-name">${repo.name}</div>
+                            <p class="repo-desc">${repo.description || 'No description available.'}</p>
                         </div>
-                        <div class="repo-stars">
-                            <span>★</span>
-                            <span>${repo.stargazers_count}</span>
+                        <div class="repo-footer">
+                            <div class="repo-lang">
+                                <span class="lang-dot" style="background-color: ${langColor}"></span>
+                                <span>${repo.language || 'Plain Text'}</span>
+                            </div>
+                            <div class="repo-stars">
+                                <span>★</span>
+                                <span>${repo.stargazers_count}</span>
+                            </div>
+                            <a href="${repo.html_url}" target="_blank" class="pub-link" style="margin: 0">View →</a>
                         </div>
-                        <a href="${repo.html_url}" target="_blank" class="pub-link" style="margin: 0">View →</a>
                     </div>
                 `;
 
                 repoContainer.appendChild(card);
                 observer.observe(card); // Animate new cards
+
+                // Add lightbox functionality to the new image
+                const img = card.querySelector('.repo-preview img');
+                if (img) {
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', () => {
+                        const lightbox = document.getElementById('lightbox');
+                        const lightboxImg = document.getElementById('lightbox-img');
+                        lightboxImg.src = img.src;
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Prevent scroll
+                    });
+                }
             });
         } catch (error) {
             console.error('Error fetching GitHub repos:', error);

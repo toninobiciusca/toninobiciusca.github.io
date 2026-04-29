@@ -54,6 +54,7 @@
     /* Indigo accent */
     --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
     --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --lightbox-bg: rgba(255, 255, 255, 0.4);
 }
 
 [data-theme="dark"] {
@@ -66,6 +67,7 @@
     --portfolio-glass: rgba(30, 41, 59, 0.7);
     --portfolio-accent: #818cf8;
     --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --lightbox-bg: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -642,6 +644,137 @@ section {
     font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 12px;
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--lightbox-bg);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 60%;
+    max-height: 60vh;
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: var(--text-primary);
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 10001;
+}
+
+.close-lightbox:hover {
+    transform: scale(1.1);
+}
+
+/* Repo Cards */
+.repo-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    overflow: hidden;
+    height: 100%;
+}
+
+.repo-preview {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(0,0,0,0.05);
+}
+
+.repo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.repo-card:hover .repo-preview img {
+    transform: scale(1.08);
+}
+
+.repo-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.repo-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.repo-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.repo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding-top: 16px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.repo-lang {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lang-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }
 
 /* Conference & Publications */
