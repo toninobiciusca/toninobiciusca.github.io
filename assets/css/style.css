@@ -1,5 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
+/* Intro Video Overlay */
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 1.2s, 
+                filter 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#intro-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(20px);
+    transform: scale(1.1);
+}
+
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 :root {
     --bg-color: #fbfbfd;
     --text-primary: #1d1d1f;
@@ -7,8 +38,10 @@
     --accent-color: #0071e3;
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(255, 255, 255, 0.4);
-    --portfolio-glass: rgba(240, 244, 255, 0.7); /* Subtle indigo tint */
-    --portfolio-accent: #4338ca; /* Indigo accent */
+    --portfolio-glass: rgba(240, 244, 255, 0.7);
+    /* Subtle indigo tint */
+    --portfolio-accent: #4338ca;
+    /* Indigo accent */
     --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
     --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -47,7 +80,8 @@ body {
 }
 
 /* Navigation & Footer */
-.glass-nav, .glass-footer {
+.glass-nav,
+.glass-footer {
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -64,7 +98,8 @@ body {
 }
 
 .glass-footer {
-    position: relative; /* Footer is not fixed at bottom of viewport, but at end of content */
+    position: relative;
+    /* Footer is not fixed at bottom of viewport, but at end of content */
     margin-top: 80px;
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -80,7 +115,8 @@ body {
     padding: 10px 0;
 }
 
-.nav-content, .footer-content {
+.nav-content,
+.footer-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 24px;
@@ -97,11 +133,20 @@ body {
 }
 
 .nav-logo {
-    font-weight: 700;
-    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.nav-logo:hover .logo-img {
+    transform: scale(1.05);
 }
 
 .nav-links {
