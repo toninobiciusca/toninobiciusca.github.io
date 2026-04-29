@@ -38,6 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinksContainer = document.querySelector('.nav-links');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    // Theme Toggle Logic
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Re-initialize icons to handle visibility switch
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    }
 
     // Mobile Menu Toggle
     if (mobileToggle) {
