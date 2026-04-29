@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonino Biciușcă | Senior IT Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #333333;
+            --accent: #1a3a5f;
+            --light-gray: #f4f4f4;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: var(--bg);
+        }
+        header { text-align: center; margin-bottom: 50px; }
+        h1 { margin-bottom: 5px; font-weight: 700; font-size: 2.5rem; }
+        .title { font-size: 1.2rem; color: var(--accent); letter-spacing: 1px; font-weight: 400; }
+        .contact { margin-top: 15px; font-size: 0.9rem; }
+        
+        .section-title { 
+            border-bottom: 2px solid var(--accent); 
+            padding-bottom: 5px; 
+            margin-top: 40px; 
+            font-weight: 700; 
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .job { margin-bottom: 30px; }
+        .job-header { display: flex; justify-content: space-between; font-weight: 600; }
+        .job-title { font-style: italic; color: var(--accent); margin-bottom: 10px; }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        
+        .publications a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+        .publications a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .expertise-grid { grid-template-columns: 1fr; }
+            .job-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TONINO BICIUȘCĂ</h1> [cite: 2]
+    <div class="title">Senior IT Manager & Software Engineer</div> [cite: 3]
+    <div class="contact">
+        Dumbrăvița, Timiș | +40751676362 | biciusca.tonino@gmail.com [cite: 1, 4, 5]
+    </div>
+</header>
+
+<section>
+    <div class="section-title">Despre Mine</div> [cite: 6]
+    <p>Sunt un inginer cu background în fizică și peste un deceniu de experiență în construirea sistemelor bazate pe Java[cite: 7]. În ultimii ani, am condus un departament de peste 50 de persoane în sectorul automotive, gestionând bugetare, recrutare și strategie tehnică[cite: 8]. Mă concentrez pe modernizarea arhitecturilor cu Java 21 și implementări locale de AI[cite: 9, 12].</p>
+</section>
+
+<section class="expertise-grid">
+    <div>
+        <strong>Technical Expertise</strong><br>
+        Java 21, Spring Boot 3, Quarkus, Angular 21, AWS, Docker, Kubernetes[cite: 12].
+    </div>
+    <div>
+        <strong>Leadership Skills</strong><br>
+        Management (50+), Strategic Hiring, Budgeting, Resource Allocation[cite: 13].
+    </div>
+</section>
+
+<section>
+    <div class="section-title">Experiență Profesională</div> [cite: 14]
+    <div class="job">
+        <div class="job-header">
+            <span>Cognizant Mobility Romania</span>
+            <span>2021 – Prezent</span> [cite: 15]
+        </div>
+        <div class="job-title">Senior Manager (Department Leader)</div> [cite: 16]
+        <ul>
+            <li>Conduc o organizație IT de peste 50 de membri servind industria automotive[cite: 17].</li>
+            <li>Gestionez bugetele departamentale și planurile de personal, echilibrând creșterea cu eficiența costurilor[cite: 19].</li>
+            <li>Ofer consultanță tehnică de nivel înalt pentru arhitectura Java[cite: 22].</li>
+        </ul>
+    </div>
+
+    <div class="job">
+        <div class="job-header">
+            <span>NTT Data Romania</span>
+            <span>2017 – 2021</span> [cite: 26]
+        </div>
+        <div class="job-title">Senior Java Developer</div> [cite: 27]
+        <ul>
+            <li>Dezvoltare și modernizare de soluții backend pentru BMW Group folosind Java EE și Quarkus[cite: 27].</li>
+            <li>Colaborare activă cu echipele DevOps pentru securizarea pipeline-urilor CI/CD[cite: 29].</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">Educație & Cercetare</div> [cite: 39]
+    <p><strong>Master of Science: Physics of Crystalline Materials</strong> [cite: 41, 42]<br>
+    West University of Timisoara | 2011 – 2013 [cite: 40]</p>
+    
+    <div class="publications">
+        <strong>Publicații Selecționate:</strong><br>
+        • Two-dimensional Boltzmann model for van der Waals fluids (2020) [cite: 54, 55]<br>
+        • Corner transport upwind model for bubble cavitation, Physical Review E (2018) [cite: 57, 58]
+    </div>
+</section>
+
+</body>
+</html>
