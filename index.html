@@ -1,131 +1,298 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tonino Biciușcă | Senior IT Manager</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #333333;
-            --accent: #1a3a5f;
-            --light-gray: #f4f4f4;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: var(--bg);
-        }
-        header { text-align: center; margin-bottom: 50px; }
-        h1 { margin-bottom: 5px; font-weight: 700; font-size: 2.5rem; }
-        .title { font-size: 1.2rem; color: var(--accent); letter-spacing: 1px; font-weight: 400; }
-        .contact { margin-top: 15px; font-size: 0.9rem; }
-        
-        .section-title { 
-            border-bottom: 2px solid var(--accent); 
-            padding-bottom: 5px; 
-            margin-top: 40px; 
-            font-weight: 700; 
-            text-transform: uppercase;
-            font-size: 1.1rem;
-        }
-        
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            background: var(--light-gray);
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        
-        .job { margin-bottom: 30px; }
-        .job-header { display: flex; justify-content: space-between; font-weight: 600; }
-        .job-title { font-style: italic; color: var(--accent); margin-bottom: 10px; }
-        
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        
-        .publications a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
-        .publications a:hover { text-decoration: underline; }
-
-        @media (max-width: 600px) {
-            .expertise-grid { grid-template-columns: 1fr; }
-            .job-header { flex-direction: column; }
-        }
-    </style>
+    <meta name="description"
+        content="Tonino Biciușcă - Senior IT Manager & Software Engineer Portfolio. Senior Manager at Cognizant Mobility Romania.">
+    <title>Tonino Biciușcă | Senior IT Manager & Software Engineer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
+    <div class="bg-gradient"></div>
 
-<header>
-    <h1>TONINO BICIUȘCĂ</h1> [cite: 2]
-    <div class="title">Senior IT Manager & Software Engineer</div> [cite: 3]
-    <div class="contact">
-        Dumbrăvița, Timiș | +40751676362 | biciusca.tonino@gmail.com [cite: 1, 4, 5]
-    </div>
-</header>
-
-<section>
-    <div class="section-title">Despre Mine</div> [cite: 6]
-    <p>Sunt un inginer cu background în fizică și peste un deceniu de experiență în construirea sistemelor bazate pe Java[cite: 7]. În ultimii ani, am condus un departament de peste 50 de persoane în sectorul automotive, gestionând bugetare, recrutare și strategie tehnică[cite: 8]. Mă concentrez pe modernizarea arhitecturilor cu Java 21 și implementări locale de AI[cite: 9, 12].</p>
-</section>
-
-<section class="expertise-grid">
-    <div>
-        <strong>Technical Expertise</strong><br>
-        Java 21, Spring Boot 3, Quarkus, Angular 21, AWS, Docker, Kubernetes[cite: 12].
-    </div>
-    <div>
-        <strong>Leadership Skills</strong><br>
-        Management (50+), Strategic Hiring, Budgeting, Resource Allocation[cite: 13].
-    </div>
-</section>
-
-<section>
-    <div class="section-title">Experiență Profesională</div> [cite: 14]
-    <div class="job">
-        <div class="job-header">
-            <span>Cognizant Mobility Romania</span>
-            <span>2021 – Prezent</span> [cite: 15]
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <a href="#home" class="nav-logo">TONINO BICIUȘCĂ</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#skills">Skills</a>
+                <a href="#publications">Publications</a>
+                <a href="#education">Education</a>
+                <a href="assets/docs/Tonino_Biciusca_CV.pdf" download class="nav-cv-link">CV <i data-lucide="download"></i></a>
+            </div>
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <div class="job-title">Senior Manager (Department Leader)</div> [cite: 16]
-        <ul>
-            <li>Conduc o organizație IT de peste 50 de membri servind industria automotive[cite: 17].</li>
-            <li>Gestionez bugetele departamentale și planurile de personal, echilibrând creșterea cu eficiența costurilor[cite: 19].</li>
-            <li>Ofer consultanță tehnică de nivel înalt pentru arhitectura Java[cite: 22].</li>
-        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="profile-photo-wrapper">
+                    <img src="assets/images/tb_profile_photo.jpg" alt="Tonino Biciușcă" class="profile-photo">
+                </div>
+                <header>
+                    <h1>TONINO BICIUȘCĂ</h1>
+                    <div class="hero-subtitle">Senior IT Manager & Software Engineer</div>
+                    <div class="contact-info">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Dumbrăvița,+Timiș,+Romania" target="_blank" class="contact-item"><i data-lucide="map-pin"></i> Dumbrăvița, Timiș, Romania</a>
+                        <a href="tel:+40751676362" class="contact-item"><i data-lucide="phone"></i> +40 751 676 362</a>
+                        <a href="mailto:biciusca.tonino@gmail.com" class="contact-item"><i data-lucide="mail"></i> biciusca.tonino@gmail.com</a>
+                    </div>
+                </header>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="glass-card">
+                <p>I am an engineer with a background in physics and over a decade of experience building Java-based
+                    systems. For the past few years, I’ve led a department of 50+ people in the automotive sector, where
+                    I handle the administrative side—budgeting, hiring, and staffing—while staying deeply involved in
+                    our technical direction.</p>
+                <p style="margin-top: 16px;">My current focus is on modernizing architectures with Java, exploring local
+                    AI implementations, and scaling technical teams. I’m looking for a role where I can continue to
+                    contribute technically, while using my management experience to ensure teams deliver high-quality
+                    software without losing sight of the code.</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="glass-card">
+                <!-- Cognizant Mobility -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="company">Cognizant Mobility Romania</span>
+                        <span class="period">2021 – Present</span>
+                    </div>
+
+                    <div class="role-block" style="margin-bottom: 32px;">
+                        <div class="job-title">Senior Manager (Department Leader) | 2022 - Present</div>
+                        <ul>
+                            <li><strong>Department Leadership:</strong> Directing a 50+ member IT organization serving
+                                the automotive sector. I oversee cross-functional teams and ensure technical excellence
+                                across multiple high-stakes projects.</li>
+                            <li><strong>Operations & Strategy:</strong> Manage departmental budgets and staffing plans,
+                                balancing aggressive growth targets with cost-efficiency and talent retention.</li>
+                            <li><strong>People Development:</strong> Own the full employee lifecycle—from performance
+                                reviews and career pathing to conducting final-stage technical interviews for new hires.
+                            </li>
+                            <li><strong>Delivery & Resource Management:</strong> Partner with Project Managers to
+                                identify resource gaps and allocate engineers effectively to ensure on-time delivery.
+                            </li>
+                            <li><strong>Technical Advisory:</strong> Provide high-level guidance on Java architecture
+                                and coding standards, stepping in to solve complex technical roadblocks when necessary.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="role-block">
+                        <div class="job-title">Senior Java Developer | 2021 – 2022</div>
+                        <ul>
+                            <li><strong>Telecommunications:</strong> Contributed to a full-stack project, building
+                                scalable backend services and responsive frontend components.</li>
+                            <li><strong>Technical Ownership:</strong> Actively collaborated with QA and DevOps to harden
+                                CI/CD pipelines. Optimized system performance and RESTful API refinements.</li>
+                            <li><strong>Agile Collaboration:</strong> Worked within distributed teams, translating
+                                complex architectural designs into functional, production-ready code.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NTT Data -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="company">NTT Data Romania</span>
+                        <span class="period">2017 – 2021</span>
+                    </div>
+                    <div class="job-title">Java Developer</div>
+                    <ul>
+                        <li><strong>FinTech:</strong> Developed core features for the ABACUS banking regulatory
+                            reporting suite. Built complex backend logic and managed frontend UI components using GWT
+                            (Google Web Toolkit).</li>
+                    </ul>
+                </div>
+
+                <!-- BearingPoint -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="company">BearingPoint Romania</span>
+                        <span class="period">2015 – 2017</span>
+                    </div>
+                    <div class="job-title">Java Developer</div>
+                    <ul>
+                        <li>Developed backend systems for automotive software while gradually transitioning into
+                            leadership.</li>
+                        <li>Mentored junior engineers and took ownership of team coordination within an Agile
+                            environment.</li>
+                    </ul>
+                </div>
+
+                <!-- Romanian Academy -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="company">Romanian Academy</span>
+                        <span class="period">2012 – 2015</span>
+                    </div>
+                    <div class="job-title">Research Assistant</div>
+                    <ul>
+                        <li><strong>Computational Fluid Dynamics:</strong> Developed simulation models in C to analyze
+                            high-performance computing data.</li>
+                        <li><strong>Academic Impact:</strong> Co-authored peer-reviewed research published in
+                            international journals, including Physical Review E and Computers and Mathematics with
+                            Applications.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2 class="section-title">Open Source Projects</h2>
+            <div id="github-repos" class="repos-grid">
+                <!-- Dynamically populated by script.js -->
+                <div class="loading-state">Loading repositories...</div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://github.com/toninobiciusca" target="_blank" class="pub-link">View all on GitHub →</a>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="glass-card skill-category">
+                    <h3>Core Development</h3>
+                    <ul>
+                        <li><strong>Languages:</strong> Java 21, SQL</li>
+                        <li><strong>Frontend:</strong> Angular 21</li>
+                        <li><strong>Frameworks:</strong> Spring Boot 3, Quarkus, Java EE</li>
+                        <li><strong>Build:</strong> Maven, Git</li>
+                    </ul>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <ul>
+                        <li><strong>Infrastructure:</strong> Docker, Kubernetes, Terraform</li>
+                        <li><strong>Cloud:</strong> AWS</li>
+                        <li><strong>CI/CD:</strong> Jenkins, GitHub Actions</li>
+                    </ul>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3>AI & Emerging Tech</h3>
+                    <ul>
+                        <li><strong>Local LLM:</strong> Ollama</li>
+                        <li><strong>Models:</strong> Google Gemma 4 (2B), Qwen 2 (1.5B)</li>
+                        <li><strong>Vector DB:</strong> PGVector</li>
+                    </ul>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3>Data Management</h3>
+                    <ul>
+                        <li><strong>Relational:</strong> Oracle, PostgreSQL</li>
+                        <li><strong>NoSQL:</strong> Redis</li>
+                        <li><strong>Migration:</strong> Flyway</li>
+                    </ul>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3>Observability & Tools</h3>
+                    <ul>
+                        <li><strong>Monitoring:</strong> Dynatrace, Grafana, ELK Stack</li>
+                        <li><strong>ITSM:</strong> ServiceNow, Jira</li>
+                        <li><strong>IDEs:</strong> IntelliJ, VS Code, Antigravity</li>
+                    </ul>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li><strong>Romanian:</strong> Native</li>
+                        <li><strong>English:</strong> Professional Proficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2 class="section-title">Publications</h2>
+            <div class="glass-card">
+                <div class="pub-item">
+                    <div class="pub-header">
+                        <strong>Computers and Mathematics with Applications (Elsevier)</strong>
+                        <span class="period">2020</span>
+                    </div>
+                    <p>Two-dimensional off-lattice Boltzmann model for van der Waals fluids with variable temperature.
+                    </p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0898122118307077" target="_blank"
+                        class="pub-link">Read Publication →</a>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-header">
+                        <strong>Physical Review E</strong>
+                        <span class="period">2018</span>
+                    </div>
+                    <p>Corner transport upwind lattice Boltzmann model for bubble cavitation</p>
+                    <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.023309" target="_blank"
+                        class="pub-link">Read Publication →</a>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-header">
+                        <strong>Elsevier / arXiv</strong>
+                        <span class="period">2017</span>
+                    </div>
+                    <p>Lattice Boltzmann model for liquid-vapour thermal flows</p>
+                    <a href="https://arxiv.org/abs/1702.01690v1" target="_blank" class="pub-link">Read Publication →</a>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-header">
+                        <strong>Comptes rendus - Mécanique (Elsevier)</strong>
+                        <span class="period">2015</span>
+                    </div>
+                    <p>Simulation of liquid-vapour phase separation on GPUs using Lattice Boltzmann models with
+                        off-lattice velocity sets</p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1631072115000868" target="_blank"
+                        class="pub-link">Read Publication →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="glass-card">
+                <div class="education-item">
+                    <div class="job-header">
+                        <span class="company">West University of Timisoara</span>
+                        <span class="period">2011 – 2013</span>
+                    </div>
+                    <p><strong>Master of Science:</strong> Physics of Crystalline Materials</p>
+                </div>
+                <div class="education-item" style="margin-top: 32px;">
+                    <div class="job-header">
+                        <span class="company">West University of Timisoara</span>
+                        <span class="period">2008 – 2011</span>
+                    </div>
+                    <p><strong>Bachelor of Science:</strong> Physics and Computer Science</p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="job">
-        <div class="job-header">
-            <span>NTT Data Romania</span>
-            <span>2017 – 2021</span> [cite: 26]
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Tonino Biciușcă. All rights reserved.</p>
         </div>
-        <div class="job-title">Senior Java Developer</div> [cite: 27]
-        <ul>
-            <li>Dezvoltare și modernizare de soluții backend pentru BMW Group folosind Java EE și Quarkus[cite: 27].</li>
-            <li>Colaborare activă cu echipele DevOps pentru securizarea pipeline-urilor CI/CD[cite: 29].</li>
-        </ul>
-    </div>
-</section>
+    </footer>
 
-<section>
-    <div class="section-title">Educație & Cercetare</div> [cite: 39]
-    <p><strong>Master of Science: Physics of Crystalline Materials</strong> [cite: 41, 42]<br>
-    West University of Timisoara | 2011 – 2013 [cite: 40]</p>
-    
-    <div class="publications">
-        <strong>Publicații Selecționate:</strong><br>
-        • Two-dimensional Boltzmann model for van der Waals fluids (2020) [cite: 54, 55]<br>
-        • Corner transport upwind model for bubble cavitation, Physical Review E (2018) [cite: 57, 58]
-    </div>
-</section>
-
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
