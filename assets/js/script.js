@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (introOverlay && introVideo) {
         const endIntro = () => {
             introOverlay.classList.add('fade-out');
+            document.body.classList.add('content-visible');
             setTimeout(() => {
                 introOverlay.remove();
-            }, 1200); // Match 1.2s transition duration
+            }, 1800); // Match 1.8s transition duration
         };
 
         introVideo.playbackRate = 6; // Set to 6x for "much faster" feel
@@ -32,10 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 5000); // Shorter safety for 2x speed
     }
-    // Navigation handling
     const nav = document.querySelector('.glass-nav');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    // Mobile Menu Toggle
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinksContainer.classList.toggle('active');
+        });
+    }
+
+    // Close mobile menu when link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle?.classList.remove('active');
+            navLinksContainer?.classList.remove('active');
+        });
+    });
 
     // Sticky Header logic
     window.addEventListener('scroll', () => {
