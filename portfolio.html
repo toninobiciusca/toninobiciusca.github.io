@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tonino Biciusca - Senior IT Manager & Software Engineer Portfolio. Projects and code repositories.">
+    <meta name="keywords" content="Tonino Biciusca, Softwer Developer, Software Developer, Software Engineer, Java Developer, Fullstack Developer, Team Lead, IT Manager, Timisoara, Timis, West Romania, Romania">
+    <meta name="author" content="Tonino Biciusca">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toninobiciusca.github.io/portfolio.html">
+    <meta property="og:title" content="Tonino Biciusca | Projects & Portfolio">
+    <meta property="og:description" content="Open source projects and development codebases built by Tonino Biciusca.">
+    <meta property="og:image" content="https://toninobiciusca.github.io/assets/images/profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://toninobiciusca.github.io/portfolio.html">
+    <meta property="twitter:title" content="Tonino Biciusca | Projects & Portfolio">
+    <meta property="twitter:description" content="Open source projects and development codebases built by Tonino Biciusca.">
+    <meta property="twitter:image" content="https://toninobiciusca.github.io/assets/images/profile.jpg">
+
+    <title>Tonino Biciusca | Projects & Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- SYSTEM FAST PRELOADER -->
+    <div id="loader-wrapper" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="loader-square-container">
+                <div class="loader-square"></div>
+            </div>
+            <div class="loader-progress" id="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE NEURAL NETWORK BACKGROUND -->
+    <canvas id="fluid-bg-canvas"></canvas>
+
+    <!-- TOP STATUS HEADER -->
+    <header class="top-status-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <span class="logo-accent">TB</span>.dev
+            </a>
+        </div>
+    </header>
+
+    <!-- FLOATING BOTTOM HUD DOCK NAVIGATION -->
+    <nav class="hud-dock-wrapper" aria-label="HUD Dock Navigation">
+        <div class="hud-dock-capsule" role="tablist">
+            <!-- Home Node -->
+            <a href="index.html#hero" class="dock-item" aria-label="Home">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span class="dock-tooltip">Home</span>
+                <span class="active-dot"></span>
+            </a>
+
+            <!-- About Me Node -->
+            <a href="index.html#about" class="dock-item" aria-label="About Me">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span class="dock-tooltip">About</span>
+                <span class="active-dot"></span>
+            </a>
+            
+            <!-- Expertise Node -->
+            <a href="index.html#expertise" class="dock-item" aria-label="Expertise">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                <span class="dock-tooltip">Expertise</span>
+                <span class="active-dot"></span>
+            </a>
+            
+            <!-- Experience Node -->
+            <a href="index.html#experience" class="dock-item" aria-label="Experience">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span class="dock-tooltip">Experience</span>
+                <span class="active-dot"></span>
+            </a>
+            
+            <!-- Skills Node -->
+            <a href="index.html#skills" class="dock-item" aria-label="Skills">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <span class="dock-tooltip">Skills</span>
+                <span class="active-dot"></span>
+            </a>
+            
+            <!-- Publications Node -->
+            <a href="index.html#publications" class="dock-item" aria-label="Publications">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <span class="dock-tooltip">Publications</span>
+                <span class="active-dot"></span>
+            </a>
+            
+            <!-- Contact Node -->
+            <a href="index.html#contact" class="dock-item" aria-label="Connect">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span class="dock-tooltip">Connect</span>
+                <span class="active-dot"></span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- MAIN WRAPPER FOR SCROLL CONTENT -->
+    <main class="content-wrapper">
+        <section class="portfolio-hero-section">
+            <div class="section-container">
+                <div class="section-title reveal-on-scroll">
+                    <span class="sub-title">Open Source</span>
+                    <h3>GitHub Projects</h3>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="portfolio-grid">
+                    
+                    <!-- Project 1: mobility-insights -->
+                    <div class="portfolio-card glass-card reveal-on-scroll">
+                        <div class="portfolio-card-header">
+                            <span class="project-lang ts-theme">TypeScript</span>
+                            <span class="project-status">Public</span>
+                        </div>
+                        <h4>mobility-insights</h4>
+                        <p class="project-desc">
+                            A responsive User Interface for the Mobility Insights Application. Designed to visualize high-dimensional telemetry, mobility logs, and traffic patterns with premium interactive charts and maps.
+                        </p>
+                        <div class="project-tags">
+                            <span>TypeScript</span>
+                            <span>Angular / React</span>
+                            <span>Telemetry UI</span>
+                            <span>Data Visualization</span>
+                        </div>
+                        <a href="https://github.com/toninobiciusca/mobility-insights" target="_blank" rel="noopener" class="project-btn btn-secondary">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            View on GitHub
+                        </a>
+                    </div>
+
+                    <!-- Project 2: ai-spatial-insights -->
+                    <div class="portfolio-card glass-card reveal-on-scroll">
+                        <div class="portfolio-card-header">
+                            <span class="project-lang java-theme">Java</span>
+                            <span class="project-status">Public</span>
+                        </div>
+                        <h4>ai-spatial-insights</h4>
+                        <p class="project-desc">
+                            A backend project implementing local artificial intelligence. Leverages Ollama integrations, spatial queries, and Java 21 features to perform local natural language and coordinates analyses.
+                        </p>
+                        <div class="project-tags">
+                            <span>Java 21</span>
+                            <span>Spring Boot</span>
+                            <span>Ollama AI</span>
+                            <span>Spatial Analytics</span>
+                            <span>Local LLMs</span>
+                        </div>
+                        <a href="https://github.com/toninobiciusca/ai-spatial-insights" target="_blank" rel="noopener" class="project-btn btn-secondary">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <div class="footer-container">
+                <p>&copy; 2026 Tonino Biciusca.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/toninobiciusca" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="footer-icon-svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/toninobiciusca" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="footer-icon-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="assets/js/neural-background.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

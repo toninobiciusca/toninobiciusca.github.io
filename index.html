@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tonino Biciusca - Senior IT Manager & Software Engineer. Physics-trained leader with 10+ years experience building backend Java systems, scaling 50+ member teams, and implementing local AI.">
+    <meta name="keywords" content="Tonino Biciusca, Softwer Developer, Software Developer, Software Engineer, Java Developer, Fullstack Developer, Team Lead, IT Manager, Timisoara, Timis, West Romania, Romania">
+    <meta name="author" content="Tonino Biciusca">
+ 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toninobiciusca.github.io/">
+    <meta property="og:title" content="Tonino Biciusca | Senior IT Manager & Software Engineer">
+    <meta property="og:description" content="Physics-trained leader with 10+ years experience building backend Java systems, scaling 50+ member teams, and implementing local AI.">
+    <meta property="og:image" content="https://toninobiciusca.github.io/assets/images/profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://toninobiciusca.github.io/">
+    <meta property="twitter:title" content="Tonino Biciusca | Senior IT Manager & Software Engineer">
+    <meta property="twitter:description" content="Physics-trained leader with 10+ years experience building backend Java systems, scaling 50+ member teams, and implementing local AI.">
+    <meta property="twitter:image" content="https://toninobiciusca.github.io/assets/images/profile.jpg">
+
+    <title>Tonino Biciusca | Senior IT Manager & Software Engineer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- SYSTEM FAST PRELOADER -->
+    <div id="loader-wrapper" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="loader-square-container">
+                <div class="loader-square"></div>
+            </div>
+            <div class="loader-progress" id="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE NEURAL NETWORK BACKGROUND -->
+    <canvas id="fluid-bg-canvas"></canvas>
+
+    <!-- TOP STATUS HEADER -->
+    <header class="top-status-header">
+        <div class="header-container">
+            <a href="#hero" class="header-logo">
+                <span class="logo-accent">TB</span>.dev
+            </a>
+            <div class="header-controls">
+                <button id="sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle Sound" title="Toggle Sound">
+                    <svg class="sound-on-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                    <svg class="sound-off-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FLOATING BOTTOM HUD DOCK NAVIGATION -->
+    <nav class="hud-dock-wrapper" aria-label="HUD Dock Navigation">
+        <div class="hud-dock-capsule" role="tablist">
+            <!-- Home Node -->
+            <a href="#hero" class="dock-item" data-section="hero" role="tab" aria-label="Home">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span class="dock-tooltip">Home</span>
+                <span class="active-dot"></span>
+            </a>
+
+            <!-- About Me Node -->
+            <a href="#about" class="dock-item" data-section="about" role="tab" aria-label="About Me">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span class="dock-tooltip">About</span>
+                <span class="active-dot"></span>
+            </a>
+            
+            <!-- Expertise Node -->
+            <a href="#expertise" class="dock-item" data-section="expertise" role="tab" aria-label="Expertise">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                <span class="dock-tooltip">Expertise</span>
+                <span class="active-dot"></span>
+            </a>
+            
+            <!-- Experience Node -->
+            <a href="#experience" class="dock-item" data-section="experience" role="tab" aria-label="Experience">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span class="dock-tooltip">Experience</span>
+                <span class="active-dot"></span>
+            </a>
+            
+            <!-- Publications Node -->
+            <a href="#skills" class="dock-item" data-section="skills" role="tab" aria-label="Skills">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <span class="dock-tooltip">Skills</span>
+                <span class="active-dot"></span>
+            </a>
+
+            <!-- Publications Node -->
+            <a href="#publications" class="dock-item" data-section="publications" role="tab" aria-label="Publications">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <span class="dock-tooltip">Publications</span>
+                <span class="active-dot"></span>
+            </a>
+            
+            <!-- Contact Node -->
+            <a href="#contact" class="dock-item" data-section="contact" role="tab" aria-label="Connect">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span class="dock-tooltip">Connect</span>
+                <span class="active-dot"></span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Native Scroll Height Spacer -->
+    <div class="scroll-container"></div>
+
+    <!-- MAIN WRAPPER FOR SCROLL CONTENT -->
+    <main class="content-wrapper">
+
+        <!-- 1. HERO SECTION (Minimalist Executive Console Layout) -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                
+                <!-- Central Premium Console Card -->
+                <div class="hero-console-card reveal-on-scroll">
+                    <div class="console-content">
+                        
+                        <div class="console-header">
+                            <span class="console-badge">SYSTEM READOUT: ACTIVE</span>
+                            <h1 class="console-name" style="margin-top: 4px;">TONINO BICIUSCA</h1>
+                            <h2 class="console-tagline">
+                                Senior IT Manager & <span id="dynamic-role-text" class="dynamic-accent">Tech Department Leader</span>
+                            </h2>
+                        </div>
+                        
+                        <div class="console-bio">
+                            <p>
+                                Experienced software developer and department leader with 10+ years of expertise. Scalable Java backend systems and developer-centric AI setups, while coordinating administrative lifecycles, budgets, and staffing plans for teams of around 50 members.
+                            </p>
+                        </div>
+
+                        <!-- Sleek Minimal Insights Spec Bar -->
+                        <div class="console-specs-row">
+                            <span class="spec-item"><span class="spec-val">50+</span> team</span>
+                            <span class="spec-divider">/</span>
+                            <span class="spec-item"><span class="spec-val">10+ yrs</span> backend</span>
+                            <span class="spec-divider">/</span>
+                            <span class="spec-item"><span class="spec-val">fullstack</span> dev</span>
+                            <span class="spec-divider">/</span>
+                            <span class="spec-item"><span class="spec-val">aws</span> cloud</span>
+                            <span class="spec-divider">/</span>
+                            <span class="spec-item"><span class="spec-val">ollama</span> local ai</span>
+                        </div>
+
+                        <div class="console-actions">
+                            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                            <a href="portfolio.html" class="btn btn-secondary">View Portfolio</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. ABOUT ME SECTION -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <div class="section-title">
+                    <span class="sub-title">Background</span>
+                    <h3>About Me</h3>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-premium-card glass-card reveal-on-scroll">
+                    <div class="about-premium-content">
+                        <!-- Left Integrated Photo Frame -->
+                        <div class="about-image-wrapper">
+                            <img src="assets/images/profile.jpg" alt="Tonino Biciusca Professional Portrait" class="about-premium-img">
+                            <div class="about-image-overlay"></div>
+                        </div>
+                        
+                        <!-- Right Info Panel -->
+                        <div class="about-text-wrapper">
+                            <p class="about-lead-text">
+                                Software engineer and tech department leader with over a decade of experience building scalable, distributed systems and coordinating agile engineering teams.
+                            </p>
+                            <p class="about-body-text">
+                                I operate at the intersection of technical execution and strategic management. Over the past 10+ years, I have direct governance over departmental lifecycles—including resource budgeting, recruitment, and career coaching—while steering core backend systems in Java 21, Spring Boot, and cloud architectures.
+                            </p>
+                            
+                            <!-- Sleek Inline Mini Pillars -->
+                            <div class="about-mini-pillars">
+                                <div class="mini-pillar">
+                                    <span class="mini-pillar-title">Fullstack Core</span>
+                                    <span class="mini-pillar-desc">Responsive UIs, low-latency microservices, APIs, & databases.</span>
+                                </div>
+                                <div class="mini-pillar">
+                                    <span class="mini-pillar-title">Backend Systems</span>
+                                    <span class="mini-pillar-desc">Java 21, Spring Boot, Quarkus, Docker, AWS & K8s.</span>
+                                </div>
+                                <div class="mini-pillar">
+                                    <span class="mini-pillar-title">Tech Leadership</span>
+                                    <span class="mini-pillar-desc">Agile team coordination, staffing plans, & active mentoring.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CORE EXPERTISE SECTION -->
+        <section id="expertise" class="expertise-section">
+            <div class="section-container">
+                <div class="section-title">
+                    <span class="sub-title">What I Do</span>
+                    <h3>Core Expertise</h3>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="expertise-grid reveal-on-scroll">
+                    <!-- Card 1 -->
+                    <div class="expertise-card glass-card">
+                        <div class="exp-icon-header purple-theme">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h4>Engineering Leadership</h4>
+                        <p class="exp-intro">Managing people, budgets, and operational growth scales.</p>
+                        <ul class="exp-details-list">
+                            <li><strong>Scale:</strong> Direct leader of 50+ members serving automotive projects.</li>
+                            <li><strong>Operations:</strong> Managed department budgeting, recruitment planning, and staffing.</li>
+                            <li><strong>Talent Lifecycle:</strong> Owned career path tracking and senior technical reviews.</li>
+                            <li><strong>Coaching:</strong> Performance coaching, mentoring, and fostering agile excellence.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="expertise-card glass-card">
+                        <div class="exp-icon-header cyan-theme">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                        </div>
+                        <h4>Technical Systems & Backend Development</h4>
+                        <p class="exp-intro">Designing secure, high-concurrency cloud and java backend networks.</p>
+                        <ul class="exp-details-list">
+                            <li><strong>Frameworks:</strong> Java 21, Spring Boot 3, Quarkus, Angular 21, Microservices.</li>
+                            <li><strong>Cloud & DevOps:</strong> AWS infrastructure, Docker containerization, Kubernetes, Terraform.</li>
+                            <li><strong>CI/CD:</strong> Robust pipelines via GitHub Actions and Jenkins.</li>
+                            <li><strong>Optimization:</strong> Low-latency designs, JVM tuning, database optimization.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="expertise-card glass-card">
+                        <div class="exp-icon-header gold-theme">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </div>
+                        <h4>Developer-Centric AI</h4>
+                        <p class="exp-intro">Using local artificial intelligence models and prompt setups to drive development efficiency.</p>
+                        <ul class="exp-details-list">
+                            <li><strong>Local Models:</strong> Playing with local LLMs (Ollama) to assist in coding and drafting tasks.</li>
+                            <li><strong>Prompt Engineering:</strong> Writing functional prompt workflows to accelerate code prototyping.</li>
+                            <li><strong>Tool Integrations:</strong> Setting up coding helper integrations in local IDE environments.</li>
+                            <li><strong>Focus:</strong> Leveraging AI strictly as a tool for coding productivity and management automation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. WORK EXPERIENCE SECTION -->
+        <section id="experience" class="experience-section">
+            <div class="section-container">
+                <div class="section-title">
+                    <span class="sub-title">My Journey</span>
+                    <h3>Work Experience</h3>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="experience-console glass-card reveal-on-scroll">
+                    <!-- Left Job Tabs Menu -->
+                    <div class="job-tabs-sidebar" role="tablist">
+                        <button class="job-tab-btn active" data-tab="job-cognizant" role="tab" aria-selected="true">
+                            <div class="tab-btn-header">
+                                <span class="status-indicator"></span>
+                                <span class="tab-company">Cognizant Mobility</span>
+                            </div>
+                            <span class="tab-dates">2021 - Present</span>
+                        </button>
+                        <button class="job-tab-btn" data-tab="job-ntt" role="tab" aria-selected="false">
+                            <div class="tab-btn-header">
+                                <span class="status-indicator"></span>
+                                <span class="tab-company">NTT Data</span>
+                            </div>
+                            <span class="tab-dates">2017 - 2021</span>
+                        </button>
+                        <button class="job-tab-btn" data-tab="job-bearingpoint" role="tab" aria-selected="false">
+                            <div class="tab-btn-header">
+                                <span class="status-indicator"></span>
+                                <span class="tab-company">BearingPoint</span>
+                            </div>
+                            <span class="tab-dates">2015 - 2017</span>
+                        </button>
+                        <button class="job-tab-btn" data-tab="job-academy" role="tab" aria-selected="false">
+                            <div class="tab-btn-header">
+                                <span class="status-indicator"></span>
+                                <span class="tab-company">Romanian Academy</span>
+                            </div>
+                            <span class="tab-dates">2012 - 2015</span>
+                        </button>
+                    </div>
+
+                    <!-- Right Job Details Viewport -->
+                    <div class="job-details-viewport">
+                        <!-- Panel 1: Cognizant -->
+                        <div class="job-details-panel active" id="job-cognizant" role="tabpanel">
+                            <div class="job-header">
+                                <h4>Senior IT Manager & Department Leader</h4>
+                                <div class="job-company-row">
+                                    <span class="company-tag">Cognizant Mobility Romania</span>
+                                    <span class="date-tag">2021 - Present</span>
+                                </div>
+                                <div class="role-badges">
+                                    <span class="role-badge leader">Department Leader | 2022 - Pres.</span>
+                                    <span class="role-badge technical">Senior Java Developer | 2021 - 2022</span>
+                                </div>
+                            </div>
+                            <p class="job-intro">Leading automotive software divisions and coding concurrent backend tools.</p>
+                            <ul class="job-bullets">
+                                <li><strong>Department Leadership:</strong> Directed a 50+ member IT organization serving automotive clients. Oversaw resource budgets, staffing, and project assignments.</li>
+                                <li><strong>Talent Operations:</strong> Managed employee reviews, promotions, and hiring paths. Conducted final reviews for senior-level candidates.</li>
+                                <li><strong>Technical Governance:</strong> Guided Java microservices and review standards. Solved core memory leaks and database issues.</li>
+                                <li><strong>Agile Delivery:</strong> Partnered with product owners to predict and resolve resource bottlenecks, guaranteeing releases.</li>
+                            </ul>
+                            <div class="job-tech-tags">
+                                <span>Java 21</span><span>Spring Boot 3</span><span>Quarkus</span><span>Kubernetes</span><span>Docker</span><span>Hiring</span><span>Budgeting</span>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: NTT Data -->
+                        <div class="job-details-panel" id="job-ntt" role="tabpanel">
+                            <div class="job-header">
+                                <h4>Senior Java Developer</h4>
+                                <div class="job-company-row">
+                                    <span class="company-tag">NTT Data Romania</span>
+                                    <span class="date-tag">2017 - 2021</span>
+                                </div>
+                            </div>
+                            <p class="job-intro">Developing telecommunication microservices and optimizing pipeline processes.</p>
+                            <ul class="job-bullets">
+                                <li><strong>Full-Stack Scope:</strong> Designed microservices backend features and responsive frontend layouts.</li>
+                                <li><strong>Build Automation:</strong> Worked with DevOps specialists to harden CI/CD pipelines. Integrated vulnerability checks into the delivery cycle.</li>
+                                <li><strong>Optimization:</strong> Refined RESTful API controllers and optimized database query execution plans, leveraging caching tiers.</li>
+                            </ul>
+                            <div class="job-tech-tags">
+                                <span>Java 11</span><span>Spring Boot</span><span>Angular</span><span>CI/CD</span><span>Redis</span><span>PostgreSQL</span>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: BearingPoint -->
+                        <div class="job-details-panel" id="job-bearingpoint" role="tabpanel">
+                            <div class="job-header">
+                                <h4>Java Developer</h4>
+                                <div class="job-company-row">
+                                    <span class="company-tag">BearingPoint Romania</span>
+                                    <span class="date-tag">2015 - 2017</span>
+                                </div>
+                            </div>
+                            <p class="job-intro">FinTech regulatory system backend development.</p>
+                            <ul class="job-bullets">
+                                <li><strong>Backend Engineering:</strong> Coded transaction calculation systems for the ABACUS banking reporting product.</li>
+                                <li><strong>UI Development:</strong> Maintained interfaces using Google Web Toolkit (GWT), ensuring clean client-side rendering.</li>
+                            </ul>
+                            <div class="job-tech-tags">
+                                <span>Java EE</span><span>GWT</span><span>Oracle Database</span><span>FinTech</span><span>XML Processing</span>
+                            </div>
+                        </div>
+
+                        <!-- Panel 4: Romanian Academy -->
+                        <div class="job-details-panel" id="job-academy" role="tabpanel">
+                            <div class="job-header">
+                                <h4>Research Assistant</h4>
+                                <div class="job-company-row">
+                                    <span class="company-tag">Romanian Academy</span>
+                                    <span class="date-tag">2012 - 2015</span>
+                                </div>
+                            </div>
+                            <p class="job-intro">High Performance Computing (HPC) research in Computational Fluid Dynamics.</p>
+                            <ul class="job-bullets">
+                                <li><strong>Fluid Simulation:</strong> Programmed Lattice Boltzmann model (LBM) simulations in C to analyze liquid-vapor phase separation.</li>
+                                <li><strong>GPU CUDA Parallelization:</strong> Wrote parallel computing scripts running on NVIDIA GPUs, yielding significant computation throughput.</li>
+                                <li><strong>Peer Review:</strong> Co-authored papers published in international journals covering cavitation and thermal flow vectors.</li>
+                            </ul>
+                            <div class="job-tech-tags">
+                                <span>C</span><span>CUDA / GPU Computing</span><span>Lattice Boltzmann</span><span>Fluid Dynamics</span><span>HPC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SKILLS SECTION -->
+        <section id="skills" class="skills-section">
+            <div class="section-container">
+                <div class="section-title">
+                    <span class="sub-title">Competency</span>
+                    <h3>Skills & Tech Stack</h3>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-filter-wrapper reveal-on-scroll">
+                    <div class="skills-search-box">
+                        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="skills-search-input" placeholder="Filter tech stack (e.g., Java, Kubernetes, SQL)..." autocomplete="off">
+                        <button id="skills-clear-btn" aria-label="Clear search" style="display: none;">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="skills-columns-grid reveal-on-scroll">
+                    <!-- Column 1: Backend & Core -->
+                    <div class="skills-col-card glass-card" style="--accent-color: var(--purple-accent);">
+                        <div class="skills-col-header">
+                            <span class="col-icon purple-theme">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/></svg>
+                            </span>
+                            <h4>Backend & Core</h4>
+                        </div>
+                        <div class="skills-tags-list">
+                            <span class="skill-badge">Java 21</span>
+                            <span class="skill-badge">Spring Boot 3</span>
+                            <span class="skill-badge">Quarkus</span>
+                            <span class="skill-badge">Java EE</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">Angular 21</span>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Cloud & DevOps -->
+                    <div class="skills-col-card glass-card" style="--accent-color: var(--cyan-accent);">
+                        <div class="skills-col-header">
+                            <span class="col-icon cyan-theme">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                            </span>
+                            <h4>Cloud & DevOps</h4>
+                        </div>
+                        <div class="skills-tags-list">
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">Kubernetes</span>
+                            <span class="skill-badge">AWS</span>
+                            <span class="skill-badge">Terraform</span>
+                            <span class="skill-badge">GitHub Actions</span>
+                            <span class="skill-badge">Jenkins</span>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: AI & Databases -->
+                    <div class="skills-col-card glass-card" style="--accent-color: var(--gold-accent);">
+                        <div class="skills-col-header">
+                            <span class="col-icon gold-theme">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                            </span>
+                            <h4>AI & Databases</h4>
+                        </div>
+                        <div class="skills-tags-list">
+                            <span class="skill-badge">Ollama (Local AI)</span>
+                            <span class="skill-badge">PGVector</span>
+                            <span class="skill-badge">PostgreSQL</span>
+                            <span class="skill-badge">Oracle Database</span>
+                            <span class="skill-badge">Redis</span>
+                        </div>
+                    </div>
+
+                    <!-- Column 4: Leadership & ITIL -->
+                    <div class="skills-col-card glass-card" style="--accent-color: var(--green-accent);">
+                        <div class="skills-col-header">
+                            <span class="col-icon green-theme">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </span>
+                            <h4>Leadership & ITIL</h4>
+                        </div>
+                        <div class="skills-tags-list">
+                            <span class="skill-badge">People Leadership (50+)</span>
+                            <span class="skill-badge">Budgeting & Staffing</span>
+                            <span class="skill-badge">Strategic Hiring</span>
+                            <span class="skill-badge">Performance Coaching</span>
+                            <span class="skill-badge">ServiceNow / Jira</span>
+                            <span class="skill-badge">Dynatrace / ELK</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PUBLICATIONS SECTION -->
+        <section id="publications" class="publications-section">
+            <div class="section-container">
+                <div class="section-title">
+                    <span class="sub-title">Research Contributions</span>
+                    <h3>Publications</h3>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="publications-grid reveal-on-scroll">
+                    <!-- Pub 1 -->
+                    <div class="pub-card glass-card">
+                        <div class="pub-card-header">
+                            <span class="pub-journal">Computers & Mathematics with Applications (Elsevier)</span>
+                            <span class="pub-year">2020</span>
+                        </div>
+                        <h4>Two-dimensional off-lattice Boltzmann model for van der Waals fluids with variable temperature</h4>
+                        <p>
+                            Developed an off-lattice Boltzmann method that accounts for energy and fluid equations, enabling thermal flow simulations in non-ideal fluids under temperature variations.
+                        </p>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0898122118307077" target="_blank" rel="noopener" class="pub-link">
+                            <span>Read Article</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Pub 2 -->
+                    <div class="pub-card glass-card">
+                        <div class="pub-card-header">
+                            <span class="pub-journal">Physical Review E</span>
+                            <span class="pub-year">2018</span>
+                        </div>
+                        <h4>Corner transport upwind lattice Boltzmann model for bubble cavitation</h4>
+                        <p>
+                            Formulated an upwind computational method for the Lattice Boltzmann model. Demonstrated numerical stability in complex cavitation flows where bubble dynamics collapse.
+                        </p>
+                        <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.023309" target="_blank" rel="noopener" class="pub-link">
+                            <span>Read Article</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Pub 3 -->
+                    <div class="pub-card glass-card">
+                        <div class="pub-card-header">
+                            <span class="pub-journal">arXiv / Elsevier</span>
+                            <span class="pub-year">2017</span>
+                        </div>
+                        <h4>Lattice Boltzmann model for liquid-vapour thermal flows</h4>
+                        <p>
+                            Proposed a thermal coupling method resolving temperature interfaces during liquid-gas phase separation systems.
+                        </p>
+                        <a href="https://arxiv.org/abs/1702.01690v1" target="_blank" rel="noopener" class="pub-link">
+                            <span>Read Preprint</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Pub 4 -->
+                    <div class="pub-card glass-card">
+                        <div class="pub-card-header">
+                            <span class="pub-journal">Comptes Rendus Mécanique (Elsevier)</span>
+                            <span class="pub-year">2015</span>
+                        </div>
+                        <h4>Simulation of liquid-vapour phase separation on GPUs using Lattice Boltzmann models with off-lattice velocity sets</h4>
+                        <p>
+                            Pioneered parallel CUDA scripts running off-lattice velocity sets on GPUs, generating performance acceleration over standard CPU cores.
+                        </p>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S1631072115000868" target="_blank" rel="noopener" class="pub-link">
+                            <span>Read Article</span>
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CONTACT SECTION -->
+        <section id="contact" class="contact-section">
+            <div class="section-container">
+                <div class="section-title">
+                    <span class="sub-title">Get in Touch</span>
+                    <h3>Let's Connect</h3>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-grid reveal-on-scroll">
+                    <div class="contact-card info-panel glass-card">
+                        <h4>Contact Details</h4>
+                        <p>Feel free to reach out for team leadership opportunities, system audits, backend technical advisory.</p>
+                        
+                        <div class="contact-link-row">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <a href="https://github.com/toninobiciusca" target="_blank" rel="noopener">github.com/toninobiciusca</a>
+                        </div>
+                        
+                        <div class="contact-link-row copyable" data-copy="tonino.biciusca@gmail.com" title="Click to copy email">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span class="copy-text">tonino.biciusca@gmail.com</span>
+                            <span class="copy-tooltip">Click to copy</span>
+                        </div>
+
+                        <div class="contact-link-row copyable" data-copy="+40751676362" title="Click to copy phone number">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span class="copy-text">+40 751 676 362</span>
+                            <span class="copy-tooltip">Click to copy</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-card form-panel glass-card">
+                        <form id="contact-form" action="#" method="POST" novalidate>
+                            <!-- Honeypot anti-spam trap -->
+                            <div class="honeypot" style="display:none;" aria-hidden="true">
+                                <input type="text" name="biciusca_mid_val" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe" maxlength="100">
+                                    <span class="error-msg" id="err-name"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="john@domain.com" maxlength="100">
+                                    <span class="error-msg" id="err-email"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="required">*</span></label>
+                                <input type="text" id="subject" name="subject" required placeholder="e.g. Backend Development Advisory" maxlength="150">
+                                <span class="error-msg" id="err-subject"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" required rows="5" placeholder="Write your message details..." maxlength="2000"></textarea>
+                                <span class="error-msg" id="err-message"></span>
+                            </div>
+
+                            <div class="form-group form-checkbox-group">
+                                <input type="checkbox" id="gdpr-consent" name="gdpr_consent" required>
+                                <label for="gdpr-consent" class="checkbox-label">
+                                    I agree to the processing of my data in accordance with the <a href="#" id="gdpr-link" class="gdpr-link">GDPR Policy</a>. <span class="required">*</span>
+                                </label>
+                                <span class="error-msg" id="err-gdpr"></span>
+                            </div>
+
+                            <button type="submit" class="submit-btn" id="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <svg class="btn-spinner" viewBox="0 0 24 24" width="20" height="20" style="display:none;"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="32" stroke-linecap="round"></circle></svg>
+                            </button>
+                        </form>
+
+                        <div class="form-alert-box" id="form-alert-box" style="display:none;">
+                            <div class="alert-icon success" id="success-icon" style="display:none;">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <div class="alert-text" id="alert-text"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- GDPR MODAL POPUP -->
+        <div id="gdpr-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="gdpr-modal-title">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h4 id="gdpr-modal-title">GDPR & Privacy Policy</h4>
+                    <button type="button" class="modal-close" id="gdpr-modal-close" aria-label="Close modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Consent for Data Processing:</strong> By checking the consent box, you agree that the name, email, subject, and message details you provide will be processed to respond directly to your inquiry.</p>
+                    <p><strong>Data Retention:</strong> Your information is stored temporarily to manage communication, is kept strictly confidential, and will never be shared with third parties or used for external marketing.</p>
+                    <p><strong>Your Rights:</strong> Under the General Data Protection Regulation (GDPR), you have the right to request access to, rectification of, or complete erasure of your personal data at any time by sending a message.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MAIN FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Tonino Biciusca.</p>
+            <div class="footer-links">
+                <a href="https://github.com/toninobiciusca" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="footer-icon-svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/toninobiciusca" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="footer-icon-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/neural-background.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
